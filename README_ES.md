@@ -42,13 +42,13 @@ Como proyecto de portafolio: es una base sólida, pero aún requiere mejoras en 
 
 ## Estructura del proyecto
 src/
-  components/   Componentes reutilizables de UI
-  layouts/      Layout de la aplicación
-  lib/          Clientes de API
-  services/     Servicios de datos
-  stores/       Store y slices de Zustand
-  utils/        Esquemas Zod y utilidades
-  views/        Páginas por ruta
+ -  components/   Componentes reutilizables de UI
+ -  layouts/      Layout de la aplicación
+ -  lib/          Clientes de API
+ -  services/     Servicios de datos
+ -  stores/       Store y slices de Zustand
+ -  utils/        Esquemas Zod y utilidades
+ -  views/        Páginas por ruta
 
 ---
 
