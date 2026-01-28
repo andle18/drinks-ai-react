@@ -40,6 +40,18 @@ If you are reviewing this as a portfolio project: it is a solid foundation, but 
 
 ---
 
+## Project Structure
+src/
+  components/   Reusable UI components
+  layouts/      Application layout
+  lib/          API clients
+  services/     Data and API services
+  stores/       Zustand store and slices
+  utils/        Zod schemas and helpers
+  views/        Route-level pages
+
+---
+
 ## Installation & Setup
 
 ```bash
