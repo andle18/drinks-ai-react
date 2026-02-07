@@ -1,59 +1,68 @@
-# Drinks AI React
+﻿﻿# Drinks AI React
 
-This project was built as a portfolio and learning project to demonstrate modern React patterns, state management with slices, API integration, and responsible usage of AI tools.
+Single-page app to search cocktail recipes, view details, manage favorites, and generate AI-assisted recipes. Built as a portfolio project to showcase React + TypeScript patterns, state slices, and API consumption.
 
-The focus is on clean architecture, type safety, and a realistic UI flow rather than production-scale features.
+Live demo: https://drinks-api-ai.netlify.app/
 
----
-
-## Project Overview
-Single-page application to search cocktail recipes, view details, manage favorites, and generate a custom cocktail recipe using AI.
-
-The goal of this project is to practice real-world frontend patterns, API consumption, and AI-assisted features in a controlled and professional way.
-
-If you are reviewing this as a portfolio project: it is a solid foundation, but it still requires security hardening, improved error handling, and minor UX polish before being production-ready.
-
----
-
-## Live Demo
-🔗 https://drinks-api-ai.netlify.app/
-
----
-
-## Features
+## Project overview
 - Search cocktails by ingredient and category
 - View recipe details in a modal
-- Save and remove favorite drinks (persisted in local storage)
+- Save/remove favorites (local storage)
 - AI-generated cocktail recipes streamed to the UI
 
----
+## Features
+- Recipe search with filters
+- Modal recipe details
+- Favorites with persistence
+- AI recipe generation
 
-## Tech Stack
+## Tech stack
 - React + TypeScript
 - Vite
-- Zustand (state management with slices)
-- Zod (schema validation)
+- Zustand (slice-based store)
+- Zod
 - Tailwind CSS
 - React Router
 - Axios
-- OpenRouter (AI integration)
+- OpenRouter (AI)
 
----
-
-## Project Structure
-src/
--   components/   Reusable UI components
--   layouts/      Application layout
--   lib/          API clients
--   services/     Data and API services
--   stores/       Zustand store and slices
--   utils/        Zod schemas and helpers
--  views/        Route-level pages
-
----
-
-## Installation & Setup
-
+## Installation & setup
 ```bash
 npm install
 npm run dev
+```
+
+## Environment variables
+Create a .env file at the project root:
+```bash
+VITE_OPENROUTER_API_KEY=your_key_here
+```
+Notes:
+- The AI feature requires this key.
+- This is a client-side build, so the key is exposed in the browser. For production, move AI calls to a backend or serverless function.
+
+## Scripts
+- dev: start the dev server
+- build: type-check and build the app
+- preview: preview the production build
+- lint: run ESLint
+
+## Project structure
+```
+src/
+	components/   Reusable UI components
+	layouts/      Application layout
+	lib/          API clients
+	services/     Data and API services
+	stores/       Zustand store and slices
+	types/        Shared TypeScript types
+	utils/        Zod schemas and helpers
+	views/        Route-level pages
+```
+
+## Future improvements
+- Move AI integration to a backend to avoid exposing keys
+- Add error handling and loading states for API calls
+- Improve accessibility (focus states, aria labels)
+- Add tests for store logic and UI components
+- Expand ingredient parsing beyond six items

@@ -1,59 +1,68 @@
-# Drinks AI React
+﻿﻿# Drinks AI React
 
-Este proyecto fue creado como parte de un portafolio y como ejercicio de aprendizaje para demostrar patrones modernos en React, manejo de estado por slices, consumo de APIs y uso responsable de herramientas de IA.
+Aplicación SPA para buscar recetas de cócteles, ver detalles, gestionar favoritos y generar recetas asistidas por IA. Proyecto de portafolio para demostrar patrones en React + TypeScript, slices con Zustand y consumo de APIs.
 
-El enfoque está en la arquitectura limpia, el tipado fuerte y un flujo de UI realista, no en características a escala de producción.
+Demo: https://drinks-api-ai.netlify.app/
 
----
-
-## Descripción del Proyecto
-Aplicación SPA para buscar recetas de cócteles, ver detalles, gestionar favoritos y generar recetas personalizadas utilizando IA.
-
-El objetivo del proyecto es practicar patrones reales de frontend, integración con APIs y funcionalidades asistidas por IA de manera controlada y profesional.
-
-Como proyecto de portafolio: es una base sólida, pero aún requiere mejoras en seguridad, manejo de errores y pulido de UX antes de estar listo para producción.
-
----
-
-## Demo en Vivo
-🔗 https://drinks-api-ai.netlify.app/
-
----
+## Descripción del proyecto
+- Búsqueda de cócteles por ingrediente y categoría
+- Detalles de receta en modal
+- Favoritos con persistencia en local storage
+- Generación de recetas con IA (streaming)
 
 ## Funcionalidades
-- Búsqueda de cócteles por ingrediente y categoría
-- Visualización de detalles en un modal
-- Guardar y eliminar favoritos (persistidos en local storage)
-- Generación de recetas con IA mediante streaming
+- Filtro de recetas
+- Detalle en modal
+- Favoritos persistentes
+- Generación con IA
 
----
-
-## Tecnologías Utilizadas
+## Tecnologías
 - React + TypeScript
 - Vite
-- Zustand (manejo de estado por slices)
-- Zod (validación de esquemas)
+- Zustand (store por slices)
+- Zod
 - Tailwind CSS
 - React Router
 - Axios
-- OpenRouter (integración de IA)
+- OpenRouter (IA)
 
----
-
-## Estructura del proyecto
-src/
- -  components/   Componentes reutilizables de UI
- -  layouts/      Layout de la aplicación
- -  lib/          Clientes de API
- -  services/     Servicios de datos
- -  stores/       Store y slices de Zustand
- -  utils/        Esquemas Zod y utilidades
- -  views/        Páginas por ruta
-
----
-
-## Instalación y Configuración
-
+## Instalación y configuración
 ```bash
 npm install
 npm run dev
+```
+
+## Variables de entorno
+Crea un archivo .env en la raíz del proyecto:
+```bash
+VITE_OPENROUTER_API_KEY=tu_key_aqui
+```
+Notas:
+- La funcionalidad de IA requiere esta clave.
+- Al ser cliente, la clave se expone en el navegador. Para producción, mover la integración a un backend o función serverless.
+
+## Scripts
+- dev: inicia el servidor de desarrollo
+- build: type-check y build
+- preview: previsualiza el build
+- lint: ejecuta ESLint
+
+## Estructura del proyecto
+```
+src/
+	components/   Componentes reutilizables de UI
+	layouts/      Layout de la aplicación
+	lib/          Clientes de API
+	services/     Servicios de datos
+	stores/       Store y slices de Zustand
+	types/        Tipos compartidos
+	utils/        Esquemas Zod y utilidades
+	views/        Páginas por ruta
+```
+
+## Mejoras futuras
+- Mover la integración de IA a backend para no exponer claves
+- Mejorar manejo de errores y estados de carga
+- Mejorar accesibilidad (focus states, aria labels)
+- Agregar tests a store y componentes
+- Expandir el parseo de ingredientes más allá de seis
